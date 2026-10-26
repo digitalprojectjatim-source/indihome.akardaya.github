@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+    <title>Cek Pembayaran</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center; }
+        input { padding: 10px; width: 250px; }
+        button { padding: 10px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Cek Status Pembayaran IndiHome</h2>
+    <input type="text" id="customerId" placeholder="Masukkan ID Pelanggan">
+    <button onclick="checkStatus()">Cek Status</button>
+    <div id="result"></div>
+    <script>
+        function checkStatus() {
+            var id = document.getElementById("customerId").value;
+            var resultDiv = document.getElementById("result");
+            if (id === "APAK230398") {
+                resultDiv.innerHTML = "Status: Pembayaran Diterima.";
+                resultDiv.style.color = "green";
+            } else if (id !== "") {
+                resultDiv.innerHTML = "Status: Belum Membayar atau ID Salah.";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
